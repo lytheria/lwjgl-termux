@@ -18,7 +18,7 @@ This repository provides a guide and necessary binaries/scripts to run **LWJGL (
 ## 🌠 Screenshot
 
 <p align="center">
-  <img width="1600" height="720" alt="Screenshot_2026-06-28-02-50-21-554_com termux x11" src="https://github.com/user-attachments/assets/099e8f87-2bf4-4d88-9b6f-591534f97eca" />
+  <img width="70%" height="70%" alt="1000757790" src="https://github.com/user-attachments/assets/1fafa42c-a078-402e-82c6-659c4a3f3352" />
 </p>
 
 Minecraft (OptiFine) 1.20.1 using Chocapic13 V6 Low shaders on Termux (without Proot/Chroot) with the Mesa3D Zink OpenGL 4.6 (Core Profile) driver on a Mali-G52 GPU. The Mesa3D OpenGL Core Profile lets you play Minecraft 1.17.x and later using shaderpacks without graphical bugs, while delivering better performance on modern mobile devices and giving you full control to tweak and customize your Minecraft experience in Termux. ✨
