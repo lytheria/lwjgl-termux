@@ -54,19 +54,19 @@ pkg install x11-repo && pkg update && pkg install libandroid-shmem libdrm expat 
 ```
 &ensp;Install OpenGL Drivers:<br>
 <br>
-&ensp;&ensp;• or Freedreno for Adreno GPU (required GPU Adreno 6xx):<br>
+&ensp;&ensp;• Freedreno for Adreno GPU (required GPU Adreno 6xx):<br>
 ```
 pkg install mesa-vulkan-icd-freedreno -y
 ```
-&ensp;&ensp;• or zink For all GPUs that support Vulkan (required Vulkan 1.2):<br>
+&ensp;&ensp;• zink For all GPUs that support Vulkan (required Vulkan 1.2):<br>
 ```
 pkg install mesa-zink
 ```
-&ensp;&ensp;• or zink my build version (required Vulkan 1.1):
+&ensp;&ensp;• zink my build version (required Vulkan 1.1):
 ```
 wget https://github.com/lytheria/mesa-zink-opengl/releases/download/stable/mesa-zink-opengl-23.0.4_aarch64.deb && dpkg -i mesa-zink-opengl-23.0.4_aarch64.deb
 ```
-&ensp;&ensp;• or VirGL for all GPUs that support OpenGL ES only (required OpenGL ES 3.0):
+&ensp;&ensp;• VirGL for all GPUs that support OpenGL ES only (required OpenGL ES 3.0):
 ```
 pkg install virglrenderer-android
 ```
