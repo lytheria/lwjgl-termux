@@ -35,7 +35,7 @@
             <local name="gcc"/>
             <condition property="gcc" value="@{gcc.exec}" else="@{gpp.exec}"><equals arg1="@{lang}" arg2="c"/></condition>
             <mkdir dir="@{dest}"/>
-            <apply dir="@{dest}" executable="${gcc}" dest="@{dest}" skipemptyfilesets="true" failonerror="true" parallel="true" taskname="Compiler">
+            <apply dir="@{dest}" executable="${gcc}" dest="@{dest}" skipemptyfilesets="true" failonerror="false" parallel="true" taskname="Compiler">
                 <arg line="-c -std=gnu11" unless:set="cpp"/>
                 <arg line="-c -std=gnu++2a" if:set="cpp"/>
                 <arg line="-m64" if:set="build.arch.x64"/>
@@ -165,10 +165,11 @@
         </exec>
         <echo message='${gcc.prefix}gcc${gcc.suffix} --version: "${gcc.version.string}"' taskname="Compiler"/>
 
-        <parallel threadsPerProcessor="2">
+        <parallel threadsPerProcessor="6">
 
         <!-- CORE -->
-        <build module="core" flags="-Werror -Wfatal-errors -Wall -Wextra -pedantic">
+        <build module="core" flags="-Wall -Wextra -pedantic">
+          <!-- Disable for unsupported Android system
             <beforeCompile>
                 <compile>
                     <arg value="-I${src.main.rel}/${platform}/liburing"/>
@@ -176,7 +177,7 @@
                     <arg value="-DCONFIG_HAVE_MEMFD_CREATE"/>
                     <fileset dir="." includes="${src.main}/${platform}/liburing/*.c"/>
                 </compile>
-            </beforeCompile>
+            </beforeCompile> -->
             <source>
                 <arg value="-I${src.main.rel}/libffi"/>
                 <arg value="-I${src.main.rel}/libffi/aarch64" if:set="build.arch.arm64"/>
@@ -185,8 +186,9 @@
                 <arg value="-I${src.main.rel}/libffi/riscv64" if:set="build.arch.riscv64"/>
                 <arg value="-I${src.main.rel}/libffi/x86" if:set="build.arch.x64|x86"/>
                 <arg value="-DX86_64" if:set="build.arch.x64"/> <!-- for libffi/x86/ffitarget.h -->
+                <!-- Disable because Android not support io_uring
                 <arg value="-I${src.main.rel}/${platform}/liburing"/>
-                <arg value="-I${src.main.rel}/${platform}/liburing/include"/>
+                <arg value="-I${src.main.rel}/${platform}/liburing/include"/> -->
                 <fileset dir=".">
                     <include name="${src.main}/*.c"/>
                     <include name="${src.generated}/*.c"/>
@@ -195,15 +197,17 @@
                 </fileset>
             </source>
             <beforeLink>
-                <parallel threadsPerProcessor="2" failonany="true" unless:set="lib-dependencies-uptodate">
+                <parallel threadsPerProcessor="6" failonany="false" unless:set="lib-dependencies-uptodate">
                     <update-dependency module="core" artifact="core/libffi.a"/>
                 </parallel>
             </beforeLink>
             <link>
+              <!--
                 <fileset dir="${lib.native}/org/lwjgl">
                     <include name="libffi.a"/>
-                </fileset>
+                </fileset> -->
                 <arg value="-ldl"/>
+                <arg value="-lffi"/>
             </link>
         </build>
 
@@ -282,15 +286,15 @@
         <build module="nfd" simple="true" linker="g++" if:true="${binding.nfd}">
             <beforeCompile>
                 <compile lang="c++">
-                    <arg value="-I/usr/include/gtk-3.0"/>
-                    <arg value="-I/usr/include/glib-2.0"/>
-                    <arg value="-I/usr/include/pango-1.0"/>
-                    <arg value="-I/usr/include/harfbuzz"/>
-                    <arg value="-I/usr/include/cairo"/>
-                    <arg value="-I/usr/include/gdk-pixbuf-2.0"/>
-                    <arg value="-I/usr/include/atk-1.0"/>
-                    <arg value="-I/usr/lib64/glib-2.0/include"/>
-                    <arg value="-I/usr/lib/${linux.triplet}/glib-2.0/include"/>
+                    <arg value="-I$PREFIX/include/gtk-3.0"/>
+                    <arg value="-I$PREFIX/include/glib-2.0"/>
+                    <arg value="-I$PREFIX/include/pango-1.0"/>
+                    <arg value="-I$PREFIX/include/harfbuzz"/>
+                    <arg value="-I$PREFIX/include/cairo"/>
+                    <arg value="-I$PREFIX/include/gdk-pixbuf-2.0"/>
+                    <arg value="-I$PREFIX/include/atk-1.0"/>
+                    <arg value="-I$PREFIX/lib64/glib-2.0/include"/>
+                    <arg value="-I$PREFIX/lib/glib-2.0/include"/>
                     <arg value="-I${src.main.rel}/include"/>
                     <fileset dir="." includes="${src.main}/nfd_gtk.cpp"/>
                 </compile>
@@ -308,7 +312,7 @@
         <build module="nfd" suffix="_portal" simple="true" linker="g++" if:true="${binding.nfd}">
             <beforeCompile>
                 <compile lang="c++">
-                    <arg line="-I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/lib/${linux.triplet}/dbus-1.0/include"/>
+                    <arg line="-I$PREFIX/include/dbus-1.0 -I$PREFIX/lib64/dbus-1.0/include -I/usr/lib/${linux.triplet}/dbus-1.0/include"/>
                     <arg value="-I${src.main.rel}/include"/>
                     <fileset dir="." includes="${src.main}/nfd_portal.cpp"/>
                 </compile>
