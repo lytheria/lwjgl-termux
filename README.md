@@ -86,6 +86,6 @@ Then run java program `java -cp $CP com.example.Main`. For example, see [`OptiFi
 
 ## 🧑‍💻 Author
 
-Managed and maintained by ([@Lytheria Celestine Velicia](https://github.com/lytheria)).
+Managed and maintained by ([@Lytheria](https://github.com/lytheria)).
 If you have questions, feature requests, or want to collaborate on optimizing Mesa for Termux, feel free to open an issue or connect via my [GitHub Profile](https://github.com/lytheria).
 ---
