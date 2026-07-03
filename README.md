@@ -63,19 +63,15 @@ pkg install mesa-zink
 ```
 &ensp;&ensp;• zink my build version (required Vulkan 1.1):
 ```
-wget https://github.com/lytheria/mesa-zink-opengl/releases/download/23.x.x/mesa-zink-opengl-23.0.4_aarch64.deb && find ~ -name mesa-zink-opengl-23.0.4_aarch64.deb -exec dpkg -i {} +
+wget https://github.com/lytheria/mesa-zink-opengl/releases/download/23.x.x/mesa-zink-opengl-23.0.2_aarch64.deb && find ~ -name mesa-zink-opengl-23.0.2_aarch64.deb -exec dpkg -i {} +
 ```
 &ensp;&ensp;• VirGL for all GPUs that support OpenGL ES only (required OpenGL ES 3.0):
 ```
 pkg install virglrenderer-android
 ```
-&ensp;Setup LWJGL and Termux Natives:
-```
-export LD_LIBRARY_PATH="$PREFIX/lib:(and other native paths libraries as you set):$LD_LIBRARY_PATH"
-```
 &ensp;Setup LWJGL and Minecraft libraries:
 ```
-export CP="$PREFIX/lwjgl3/*:(and other paths of your minecraft java module libraries location):$CP"
+export CP="$PREFIX/lwjgl3/*:/path/to/your/minecraft/modules/libraries:$CP"
 ```
 &ensp;Setup Display and X11 server:
 ```
