@@ -47,7 +47,7 @@ pkg install tur-repo -y
 ```
 pkg install openjdk-17 -y
 ```
-&ensp;X11 and depencies:
+&ensp;X11 and dependencies:
 ```
 pkg install x11-repo && pkg update && pkg install libandroid-shmem libdrm libexpat libexpat-static zstd zlib libxcb libx11 libc++ && pkg install termux-x11 xorgproto libxxf86vm libglvnd libwayland vulkan-loader libxxf86dga libxrandr libx11-static libxext
 ```
@@ -59,7 +59,7 @@ pkg install mesa-vulkan-icd-freedreno -y
 ```
 &ensp;&ensp;• zink For all GPUs that support Vulkan (required Vulkan 1.2):<br>
 ```
-pkg install mesa-zink
+pkg install mesa
 ```
 &ensp;&ensp;• zink my build version (required Vulkan 1.1):
 ```
@@ -78,9 +78,9 @@ export CP="$PREFIX/lwjgl3/*:/path/to/your/minecraft/modules/libraries:$CP"
 export DISPLAY=:0 && termux-x11 :0 2> /dev/null &
 ```
 ## ✏️ Guide to use OpenGL drivers
-For example,`export MESA_LOADER_DRIVER_OVERRIDE=zink` run these commands to enable Zink. or `export MESA_LOADER_DRIVER_OVERRIDE=kgsl && export GALLIUM_DRIVER=freedreno` run these commands to enable freedreno. or `export GALLIUM_DRIVER=virpipe && export VTEST_SOCK=$PREFIX/tmp/.virgl_test && virgl_test_server &` run these commands for enable VirGL. And `export MESA_GL_VERSION_OVERRIDE=4.6  && export MESA_GLSL_VERSION_OVERRIDE=460` run these commands to override the OpenGL version (but max version for VirGL is GL 4.5 and GLSL 450). If you use my zink build version, see [Key Features](https://github.com/lytheria/mesa-termux#key-features) to get more information.
+For example,`export MESA_LOADER_DRIVER_OVERRIDE=zink && export GALLIUM_DRIVER=zink` run these commands to enable Zink. or `export MESA_LOADER_DRIVER_OVERRIDE=kgsl && export GALLIUM_DRIVER=freedreno` run these commands to enable freedreno. or `export GALLIUM_DRIVER=virpipe && export VTEST_SOCK=$PREFIX/tmp/.virgl_test && virgl_test_server &` run these commands to enable VirGL. And `export MESA_GL_VERSION_OVERRIDE=4.6  && export MESA_GLSL_VERSION_OVERRIDE=460` run these commands to override the OpenGL version (but max version for VirGL is GL 4.5 and GLSL 450). To enable OpenGL Core Profile, run the following command `MESA_GL_VERSION_OVERRIDE=4.6FC`. If you use my zink build version, see [Key Features](https://github.com/lytheria/mesa-termux#key-features) to get more information.
 
-Then run java program `java -cp $CP com.example.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/1yJY3bzfAYL5Lpenvum3lMsa20p2y5Tbx/view?usp=sharing) as your reference. 📖
+Then run Minecraft program `java -cp $CP net.minecraft.client.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/1yJY3bzfAYL5Lpenvum3lMsa20p2y5Tbx/view?usp=sharing) as your reference. 📖
 
 ---
 
