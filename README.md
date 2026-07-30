@@ -15,7 +15,7 @@ This repository provides a guide and necessary binaries/scripts to run **LWJGL (
 
 ---
 
-## 🌠 Screenshot
+## 📸 Screenshot
 
 <p align="center">
   <img width="70%" height="70%" alt="1000757790" src="https://github.com/user-attachments/assets/1fafa42c-a078-402e-82c6-659c4a3f3352" />
