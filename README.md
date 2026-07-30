@@ -10,8 +10,8 @@ This repository provides a guide and necessary binaries/scripts to run **LWJGL (
 ---
 
 ## 📌 Specifications
-* **Hardware Acceleration:** Compatible with Mesa `(virgl/zink/Turnip)` or other drivers for hardware-accelerated rendering. 🖥️
-* **Architecture:** Supported on `aarch64` (ARM64) devices. 📱
+* **Hardware Acceleration:** Compatible with Mesa `(virgl/zink/freedreno)` or other drivers for hardware-accelerated rendering. 🖥️
+* **Architecture:** Supported 64-bit (ARM64) device only. 📱
 
 ---
 
