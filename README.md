@@ -61,7 +61,7 @@ pkg install mesa-vulkan-icd-freedreno -y
 ```
 pkg install mesa
 ```
-&ensp;&ensp;• zink my build version (required Vulkan 1.1):
+&ensp;&ensp;• or zink my build version (required Vulkan 1.1):
 ```
 wget https://github.com/lytheria/mesa-zink-opengl/releases/download/23.x.x/mesa-zink-opengl-23.0.2_aarch64.deb && find ~ -name mesa-zink-opengl-23.0.2_aarch64.deb -exec dpkg -i {} +
 ```
