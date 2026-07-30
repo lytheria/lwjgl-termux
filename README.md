@@ -5,7 +5,7 @@
 
 # <img src="https://github.com/user-attachments/assets/c7c318ab-4b61-4cee-9a14-13f34edafd6e" width="4%"> LWJGL Termux</img>
 
-This repository provides a guide and necessary binaries/scripts to run **LWJGL (Lightweight Java Game Library)** seamlessly inside the **Termux** environment on Android. Perfect for running Minecraft Java Edition, game development, or any Java-based OpenGL applications that needed LWJGL. 📂
+This repository provides a guide and necessary binaries/scripts to run **LWJGL (Lightweight Java Game Library)** seamlessly inside the **Termux** environment on Android. Perfect for running Minecraft Java Edition, game development, or any Java-based OpenGL applications that needed LWJGL.
 
 ---
 
