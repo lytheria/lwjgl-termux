@@ -42,7 +42,7 @@ pkg install wget -y
 ```
 &ensp;LWJGL:
 ```
-wget https://github.com/lytheria/lwjgl-termux/releases/download/3.3.6/lwjgl-termux-3.3.6_aarch64.deb && dpkg -i lwjgl-termux-3.3.6_aarch64.deb
+wget https://github.com/lytheria/lwjgl-termux/releases/download/3.3.6/lwjgl-termux-3.3.6_aarch64.deb && find ~ -name lwjgl-termux-3.3.6_aarch64.deb -exec dpkg -i {} +
 ```
 &ensp;Termux User Repository (TUR):
 ```
