@@ -31,7 +31,7 @@ Minecraft (OptiFine) 1.20.1 using Chocapic13 V6 Low shaders on Termux (without P
 
 For example, run the following commands to quickly install LWJGL and other programs. 🤗
 
-&ensl;Update & Upgrade Termux essentials:
+&ensp;Update & Upgrade Termux essentials:
 ```
 pkg update && pkg upgrade -y
 ```
