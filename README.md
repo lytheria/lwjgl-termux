@@ -83,7 +83,7 @@ export CP="$PREFIX/lwjgl3/*:/path/to/your/minecraft/modules/libraries:$CP"
 export DISPLAY=:0 && termux-x11 :0 2> /dev/null &
 ```
 
-Then run Minecraft program `java -cp $CP net.minecraft.client.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/1yJY3bzfAYL5Lpenvum3lMsa20p2y5Tbx/view?usp=sharing) as your reference. 📖
+Then run Minecraft program `java -cp $CP net.minecraft.client.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/16ONUOGv0Z7NIXhpUeEf8Ll3ogzu6bJQK/view?usp=drive_link) as your reference. 📖
 
 
 ## ✏️ Guide to use OpenGL drivers
