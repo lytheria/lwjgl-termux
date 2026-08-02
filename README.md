@@ -16,11 +16,19 @@ This repository provides a guide and necessary binaries/scripts to run **LWJGL (
 ---
 
 ## 📸 Screenshot
-
+---
 <p align="center">
-  <img width="70%" height="70%" alt="1000757790" src="https://github.com/user-attachments/assets/1fafa42c-a078-402e-82c6-659c4a3f3352" />
+  <img width="70%" height="70%" alt="1" src="https://github.com/user-attachments/assets/b7b85870-65fb-411c-85dd-8d2020777b10" />
 </p>
-
+<p align="center">
+  <img width="70%" height="70%" alt="2" src="https://github.com/user-attachments/assets/1195443d-ed13-4d1a-88ed-c13796284ba7" />
+</p>
+<p align="center">
+  <img width="70%" height="70%" alt="3" src="https://github.com/user-attachments/assets/721db7d7-d30f-47e7-9806-99b32d3c6e1c" />
+</p>
+<p align="center">
+  <img width="70%" height="70%" alt="4" src="https://github.com/user-attachments/assets/f86473f4-866b-442d-a119-7c8e86fc1b7f" />
+</p>
 ---
 
 Minecraft (OptiFine) 1.20.1 using Chocapic13 V6 Low shaders on Termux (without Proot/Chroot) with the Mesa3D Zink OpenGL 4.6 (Core Profile) driver on a Mali-G52 GPU. The Mesa3D OpenGL Core Profile lets you play Minecraft 1.17.x and later using shaderpacks without graphical bugs, while delivering better performance on modern mobile devices and giving you full control to tweak and customize your Minecraft experience in Termux. ✨
@@ -83,7 +91,7 @@ export CP="$PREFIX/lwjgl3/*:/path/to/your/minecraft/modules/libraries:$CP"
 export DISPLAY=:0 && termux-x11 :0 2> /dev/null &
 ```
 
-Then run Minecraft program `java -cp $CP net.minecraft.client.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/16ONUOGv0Z7NIXhpUeEf8Ll3ogzu6bJQK/view?usp=drive_link) as your reference. 📖
+Then run Minecraft program `java -cp $CP net.minecraft.client.Main`. For example, see [`OptiFine.sh`](https://drive.google.com/file/d/1uQdTb0I-yiUxN6Qd4fp-J7CcKWTg-mk4/view?usp=drive_link) as your reference. 📖
 
 
 ## ✏️ Guide to use OpenGL drivers
